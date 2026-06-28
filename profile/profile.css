@@ -1,0 +1,876 @@
+/* ===========================================
+   VIVAHA PROFILE
+   PART 1
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:linear-gradient(
+        135deg,
+        #faf7ff,
+        #f4edff,
+        #ede2ff
+    );
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:#333;
+
+}
+
+/* Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    top:-120px;
+    left:-120px;
+
+    background:#d5c0ff;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.7;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    bottom:-100px;
+    right:-100px;
+
+    background:#b388ff;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.6;
+
+    z-index:-2;
+
+}
+
+/* ==========================
+        HEADER
+========================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.35);
+
+    z-index:999;
+
+}
+
+.header h2{
+
+    color:#6F42C1;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.back,
+.settings{
+
+    width:45px;
+    height:45px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.back:hover,
+.settings:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.back i,
+.settings i{
+
+    color:#7C4DFF;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+      CONTAINER
+========================== */
+
+.container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:
+
+    95px
+
+    20px
+
+    120px;
+
+}
+
+/* ==========================
+      PROFILE CARD
+========================== */
+
+.profile-card{
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+    0 20px 40px rgba(124,77,255,.12);
+
+}
+
+.image-area{
+
+    position:relative;
+
+    width:130px;
+
+    margin:auto;
+
+}
+
+.image-area img{
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:0 20px 35px rgba(0,0,0,.08);
+
+}
+
+.camera{
+
+    position:absolute;
+
+    right:0;
+    bottom:5px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 20px rgba(124,77,255,.30);
+
+}
+
+.profile-card h2{
+
+    margin-top:18px;
+
+    color:#56379a;
+
+}
+
+.profile-card p{
+
+    color:#777;
+
+    margin-top:6px;
+
+}
+
+.verified{
+
+    margin-top:18px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:#f3edff;
+
+    color:#6F42C1;
+
+    font-weight:600;
+
+}
+
+.verified i{
+
+    color:#7C4DFF;
+
+}
+
+/* ==========================
+    PROFILE COMPLETION
+========================== */
+
+.completion-card{
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+    0 15px 35px rgba(124,77,255,.10);
+
+}
+
+.top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.top h3{
+
+    color:#5d3ca3;
+
+}
+
+.top span{
+
+    color:#7C4DFF;
+
+    font-weight:700;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#e9dcff;
+
+    margin-bottom:15px;
+
+}
+
+.progress-fill{
+
+    width:35%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+}
+
+.completion-card p{
+
+    color:#777;
+
+    line-height:24px;
+
+}
+
+/* ==========================
+      FORM CARDS
+========================== */
+
+.card{
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+    0 15px 35px rgba(124,77,255,.10);
+
+}
+
+.card-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.card-title i{
+
+    font-size:22px;
+
+    color:#7C4DFF;
+
+}
+
+.card-title h3{
+
+    color:#59379f;
+
+    font-size:22px;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#5c3fa4;
+
+    font-weight:600;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:white;
+
+    font-size:15px;
+
+    color:#444;
+
+    transition:.3s;
+
+    box-shadow:
+
+    0 8px 18px rgba(0,0,0,.05);
+
+}
+
+.input-group textarea{
+
+    min-height:120px;
+
+    resize:none;
+
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+
+    border:1px solid #B388FF;
+
+    box-shadow:
+
+    0 0 0 4px rgba(179,136,255,.20);
+
+}
+/* ===========================================
+   VIVAHA PROFILE
+   PART 2
+=========================================== */
+
+/* ==========================
+        SAVE BUTTONS
+========================== */
+
+.card button{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 15px 30px rgba(124,77,255,.25);
+
+}
+
+.card button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 22px 40px rgba(124,77,255,.35);
+
+}
+
+.card button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================
+      INPUT HOVER
+========================== */
+
+.input-group input:hover,
+.input-group select:hover,
+.input-group textarea:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+      PHOTO HOVER
+========================== */
+
+.image-area img{
+
+    transition:.4s;
+
+}
+
+.image-area:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.camera{
+
+    transition:.35s;
+
+}
+
+.camera:hover{
+
+    transform:scale(1.12);
+
+}
+
+/* ==========================
+      GLASS HOVER
+========================== */
+
+.profile-card:hover,
+.card:hover,
+.completion-card:hover{
+
+    transform:translateY(-3px);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 25px 45px rgba(124,77,255,.18);
+
+}
+
+/* ==========================
+      SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B388FF;
+
+    border-radius:20px;
+
+}
+
+/* ==========================
+      PLACEHOLDER
+========================== */
+
+::placeholder{
+
+    color:#aaa;
+
+}
+
+/* ==========================
+      SELECTION
+========================== */
+
+::selection{
+
+    background:#B388FF;
+
+    color:white;
+
+}
+
+/* ==========================
+      ANIMATIONS
+========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.profile-card{
+
+    animation:fadeUp .5s ease;
+
+}
+
+.completion-card{
+
+    animation:fadeUp .7s ease;
+
+}
+
+.card:nth-child(3){
+
+    animation:fadeUp .9s ease;
+
+}
+
+.card:nth-child(4){
+
+    animation:fadeUp 1.1s ease;
+
+}
+
+.card:nth-child(5){
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+/* ==========================
+      FLOATING PROFILE
+========================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.image-area img{
+
+    animation:floating 3.5s infinite;
+
+}
+
+/* ==========================
+      MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.header{
+
+padding:0 15px;
+
+}
+
+.header h2{
+
+font-size:20px;
+
+}
+
+.container{
+
+padding:90px 15px 110px;
+
+}
+
+.profile-card{
+
+padding:25px;
+
+}
+
+.image-area{
+
+width:110px;
+
+}
+
+.image-area img{
+
+width:110px;
+
+height:110px;
+
+}
+
+.camera{
+
+width:38px;
+
+height:38px;
+
+}
+
+.card{
+
+padding:20px;
+
+}
+
+.card-title h3{
+
+font-size:19px;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+padding:15px;
+
+font-size:14px;
+
+}
+
+.card button{
+
+height:54px;
+
+font-size:15px;
+
+}
+
+}
+
+/* ==========================
+      LARGE SCREENS
+========================== */
+
+@media(min-width:900px){
+
+.container{
+
+max-width:720px;
+
+margin:auto;
+
+}
+
+}
+
+/* ==========================
+      SMOOTH TRANSITIONS
+========================== */
+
+*{
+
+transition:
+
+background .3s,
+
+color .3s,
+
+box-shadow .3s,
+
+transform .3s;
+
+}
