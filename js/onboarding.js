@@ -619,6 +619,221 @@ autoSaveFields.forEach((id) => {
 // ======================================================
 // Vivaha Premium Onboarding
 // onboarding.js
+// Part 2B
+// Firestore Save • Resume Onboarding
+// ======================================================
+
+
+// ======================================================
+// Save Current Step To Firestore
+// ======================================================
+
+async function saveStep() {
+
+    try {
+
+        if (!currentUser) return;
+
+        await setDoc(
+
+            doc(db, "users", currentUser.uid),
+
+            {
+
+                name: userData.name,
+
+                gender: userData.gender,
+
+                dob: userData.dob,
+
+                lookingFor: userData.lookingFor,
+
+                country: userData.country,
+
+                state: userData.state,
+
+                district: userData.district,
+
+                motherTongue: userData.motherTongue,
+
+                education: userData.education,
+
+                occupation: userData.occupation,
+
+                income: userData.income,
+
+                profilePhoto: userData.profilePhoto,
+
+                onboardingComplete: userData.onboardingComplete,
+
+                lastStep: currentStep,
+
+                updatedAt: new Date()
+
+            },
+
+            {
+
+                merge: true
+
+            }
+
+        );
+
+        console.log("Step saved.");
+
+    }
+
+    catch (error) {
+
+        console.error("Firestore Save Error:", error);
+
+    }
+
+}
+
+
+
+// ======================================================
+// Load Existing User Data
+// ======================================================
+
+async function loadExistingData() {
+
+    try {
+
+        if (!currentUser) return;
+
+        const userRef = doc(db, "users", currentUser.uid);
+
+        const snapshot = await getDoc(userRef);
+
+        if (!snapshot.exists()) {
+
+            showStep(1);
+
+            return;
+
+        }
+
+        const data = snapshot.data();
+
+        // -----------------------------------------
+
+        userData = {
+
+            ...userData,
+
+            ...data
+
+        };
+
+        if (data.profilePhoto) {
+
+            uploadedPhotoURL = data.profilePhoto;
+
+        }
+
+        fillForm();
+
+        // -----------------------------------------
+        // Resume Previous Step
+        // -----------------------------------------
+
+        if (data.onboardingComplete) {
+
+            window.location.href = "dashboard/home.html";
+
+            return;
+
+        }
+
+        if (data.lastStep) {
+
+            showStep(data.lastStep);
+
+        }
+
+        else {
+
+            detectLastCompletedStep();
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error("Load User Error:", error);
+
+        showStep(1);
+
+    }
+
+}
+
+
+
+// ======================================================
+// Manual Save Shortcut
+// ======================================================
+
+window.addEventListener("beforeunload", async () => {
+
+    collectStepData();
+
+    await saveStep();
+
+});
+
+
+
+// ======================================================
+// Optional Auto Save Every 20 Seconds
+// ======================================================
+
+setInterval(async () => {
+
+    if (!currentUser) return;
+
+    collectStepData();
+
+    await saveStep();
+
+}, 20000);
+
+
+
+// ======================================================
+// Network Status (Optional)
+// ======================================================
+
+window.addEventListener("offline", () => {
+
+    console.warn("You are offline.");
+
+});
+
+window.addEventListener("online", async () => {
+
+    console.log("Back online. Syncing...");
+
+    collectStepData();
+
+    await saveStep();
+
+});
+
+
+
+// ======================================================
+// Debug (Remove in Production)
+// ======================================================
+
+console.log("Vivaha Onboarding Part 2B Loaded");
+// ======================================================
+// Vivaha Premium Onboarding
+// onboarding.js
 // Part 3
 // Firebase Storage • Finish • Dashboard Redirect
 // ======================================================
