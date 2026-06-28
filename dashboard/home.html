@@ -20,7 +20,8 @@ rel="stylesheet">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-  /* ===========================================
+
+/* ===========================================
    VIVAHA HOME
    Part 1
 =========================================== */
@@ -321,64 +322,40 @@ body::after{
 
 .progress-circle{
 
-    width:100px;
-    height:100px;
+    width:95px;
+
+    height:95px;
 
     border-radius:50%;
 
-    border:8px solid #d9c8ff;
+    border:8px solid #d8c3ff;
+
     border-top:8px solid #7C4DFF;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
-    margin:0 auto 18px auto;
-
-    font-size:22px;
     font-weight:700;
+
     color:#6F42C1;
 
-    background:white;
-
-    box-shadow:0 10px 25px rgba(124,77,255,.12);
+    margin-bottom:15px;
 
 }
 
-.profile-card{
+.profile-card button{
 
-    display:flex;
+    border:none;
 
-    justify-content:space-between;
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
 
-    align-items:center;
-
-    gap:25px;
-
-    padding:28px;
-
-    border-radius:28px;
-
-    background:rgba(255,255,255,.35);
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:0 15px 35px rgba(124,77,255,.12);
-
-    margin-bottom:25px;
-
-}
-.profile-right{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
     color:white;
 
     padding:12px 20px;
@@ -712,54 +689,57 @@ text-align:center;
 
     position:fixed;
 
-    bottom:0;
-    left:0;
-    right:0;
+    left:15px;
 
-    width:100%;
-    height:75px;
+    right:15px;
+
+    bottom:15px;
+
+    height:78px;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(22px);
+
+    border-radius:26px;
 
     display:flex;
+
     justify-content:space-around;
+
     align-items:center;
 
-    background:rgba(255,255,255,.96);
+    border:1px solid rgba(255,255,255,.45);
 
-    backdrop-filter:blur(25px);
+    box-shadow:0 15px 35px rgba(124,77,255,.18);
 
-    border-top:1px solid #ececec;
-
-    box-shadow:0 -5px 20px rgba(0,0,0,.06);
-
-    z-index:9999;
+    z-index:999;
 
 }
 
 .bottom-nav a{
 
-    flex:1;
-
-    height:100%;
+    text-decoration:none;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:center;
-
     align-items:center;
 
-    gap:5px;
+    justify-content:center;
 
-    text-decoration:none;
+    gap:6px;
 
-    color:#999;
+    color:#9A9A9A;
+
+    font-size:12px;
+
+    font-weight:600;
 
     transition:.3s;
 
-    font-size:11px;
-
-    font-weight:600;
+    width:65px;
 
 }
 
@@ -771,25 +751,33 @@ text-align:center;
 
 .bottom-nav a.active{
 
-    color:#7C4DFF;
+    color:#6F42C1;
 
 }
 
 .bottom-nav a.active i{
 
-    background:none;
+    width:48px;
 
-    width:auto;
+    height:48px;
 
-    height:auto;
+    border-radius:16px;
 
-    border-radius:0;
+    display:flex;
 
-    color:#7C4DFF;
+    justify-content:center;
 
-    box-shadow:none;
+    align-items:center;
 
-    transform:scale(1.12);
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(124,77,255,.35);
 
 }
 
@@ -798,13 +786,7 @@ text-align:center;
     color:#6F42C1;
 
 }
-.bottom-nav i{
 
-    font-size:22px;
-
-    margin-bottom:3px;
-
-}
 /* ===========================================
    FLOATING AI BUTTON
 =========================================== */
@@ -911,7 +893,7 @@ font-size:20px;
 
 }
 
-  }
+      }
 </style>
 </head>
 
