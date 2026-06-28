@@ -1,0 +1,881 @@
+/* ==========================================
+   Vivaha Premium Onboarding
+   Part 1
+==========================================*/
+
+:root{
+
+    --primary:#B388FF;
+    --primary-dark:#7C4DFF;
+
+    --bg:#F7F2FF;
+
+    --white:#ffffff;
+
+    --text:#222222;
+
+    --text-light:#6f6f6f;
+
+    --border:rgba(179,136,255,.18);
+
+    --glass:rgba(255,255,255,.72);
+
+    --shadow:0 18px 45px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+    --transition:.3s ease;
+
+    --max-width:620px;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #FCF9FF 0%,
+        #F7F2FF 35%,
+        #F3EDFF 100%
+    );
+
+    min-height:100vh;
+
+    color:var(--text);
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:35px 18px;
+
+    overflow-x:hidden;
+
+}
+
+
+/* Background */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    overflow:hidden;
+
+}
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+
+    height:380px;
+
+    background:#D7C2FF;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.45;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    background:#C9A9FF;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+    bottom:-120px;
+
+    right:-120px;
+
+}
+
+
+/* Main */
+
+.page{
+
+    width:100%;
+
+    max-width:var(--max-width);
+
+}
+
+
+/* Progress */
+
+.progress-section{
+
+    margin-bottom:26px;
+
+}
+
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:28px;
+
+}
+
+.logo-circle{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    box-shadow:0 10px 25px rgba(124,77,255,.35);
+
+}
+
+.logo h1{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+}
+
+.logo p{
+
+    color:var(--text-light);
+
+    margin-top:4px;
+
+    font-size:14px;
+
+}
+
+
+/* Progress Bar */
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    background:#ece6fb;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    border-radius:50px;
+
+    transition:width .45s ease;
+
+}
+
+
+/* Card */
+
+.card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:34px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .6s ease;
+
+}
+
+
+/* Heading */
+
+.card h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    letter-spacing:-.5px;
+
+}
+
+.subtitle{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    margin-bottom:32px;
+
+    font-size:15px;
+
+}
+
+
+/* Input Groups */
+
+.input-group{
+
+    margin-bottom:24px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    color:#444;
+
+}
+/* ==========================================
+   Inputs & Selects
+==========================================*/
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    border-radius:16px;
+
+    border:1.5px solid rgba(179,136,255,.25);
+
+    background:rgba(255,255,255,.85);
+
+    font-size:15px;
+
+    font-family:'Inter',sans-serif;
+
+    color:var(--text);
+
+    outline:none;
+
+    transition:all .25s ease;
+
+}
+
+.input-group input::placeholder{
+
+    color:#9b9b9b;
+
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(179,136,255,.15);
+
+    background:#fff;
+
+}
+
+
+/* ==========================================
+   Option Buttons
+==========================================*/
+
+.option-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+}
+
+.option-btn{
+
+    height:56px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.8);
+
+    border:2px solid rgba(179,136,255,.18);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    color:#444;
+
+}
+
+.option-btn:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 10px 24px rgba(179,136,255,.18);
+
+}
+
+.option-btn.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:#fff;
+
+    border-color:transparent;
+
+    box-shadow:0 14px 28px rgba(124,77,255,.28);
+
+}
+
+
+/* ==========================================
+   Upload Box
+==========================================*/
+
+.upload-box{
+
+    position:relative;
+
+    border:2px dashed rgba(179,136,255,.35);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.55);
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.upload-box:hover{
+
+    border-color:var(--primary);
+
+    background:rgba(255,255,255,.75);
+
+}
+
+.upload-text{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    margin-top:12px;
+
+}
+
+.preview-image{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    display:none;
+
+    border:5px solid #fff;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================================
+   Buttons
+==========================================*/
+
+.button-group{
+
+    margin-top:35px;
+
+}
+
+.primary-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    box-shadow:0 18px 35px rgba(124,77,255,.28);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 22px 40px rgba(124,77,255,.35);
+
+}
+
+.primary-btn:active{
+
+    transform:scale(.98);
+
+}
+/* ==========================================
+   Toast Notification
+========================================== */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%) translateY(120px);
+
+    background:#222;
+
+    color:#fff;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+
+
+/* ==========================================
+   Loading Overlay
+========================================== */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+}
+
+.loading-overlay.show{
+
+    display:flex;
+
+}
+
+.loading-overlay p{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+
+
+/* ==========================================
+   Loader
+========================================== */
+
+.loader{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(179,136,255,.2);
+
+    border-top-color:var(--primary);
+
+    animation:spin .8s linear infinite;
+
+}
+
+
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#cdb6ff;
+
+    border-radius:100px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+
+/* ==========================================
+   Animations
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+.option-btn,
+.primary-btn,
+.upload-box,
+input,
+select{
+
+    transition:.28s ease;
+
+}
+
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:18px;
+
+    }
+
+    .card{
+
+        padding:24px;
+
+        border-radius:20px;
+
+    }
+
+    .logo{
+
+        gap:12px;
+
+    }
+
+    .logo-circle{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:22px;
+
+        border-radius:15px;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .card h2{
+
+        font-size:25px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+}
+
+
+
+@media (max-width:520px){
+
+    .option-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .input-group{
+
+        margin-bottom:20px;
+
+    }
+
+    .input-group input,
+
+    .input-group select,
+
+    .option-btn,
+
+    .primary-btn{
+
+        height:54px;
+
+        font-size:15px;
+
+    }
+
+    .upload-box{
+
+        min-height:190px;
+
+    }
+
+    .preview-image{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   Large Screens
+========================================== */
+
+@media (min-width:1200px){
+
+    .page{
+
+        max-width:650px;
+
+    }
+
+}
