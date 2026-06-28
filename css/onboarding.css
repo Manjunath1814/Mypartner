@@ -1,0 +1,795 @@
+/* ===========================================
+   VIVAHA ONBOARDING
+   Part 1
+===========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #faf7ff 0%,
+        #f2ebff 35%,
+        #ebe0ff 100%
+    );
+
+}
+
+/* Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    background:#caa8ff;
+
+    top:-120px;
+    left:-120px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.65;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    background:#b388ff;
+
+    bottom:-120px;
+    right:-120px;
+
+    border-radius:50%;
+
+    filter:blur(130px);
+
+    opacity:.55;
+
+    z-index:-2;
+
+}
+
+/* Container */
+
+.container{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* Glass Card */
+
+.glass-card{
+
+    width:100%;
+    max-width:620px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+    0 25px 55px rgba(123,77,255,.15);
+
+    animation:fadeUp .6s ease;
+
+}
+
+/* Progress */
+
+.progress-container{
+
+    margin-bottom:35px;
+
+}
+
+.progress-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.progress-top h3{
+
+    color:#52378f;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.progress-top span{
+
+    color:#7b4dff;
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    border-radius:50px;
+
+    background:#e8dcff;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:12.5%;
+
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    #B388FF,
+    #7C4DFF
+    );
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+/* Steps */
+
+.step{
+
+    display:none;
+
+    animation:fade .45s;
+
+}
+
+.step.active{
+
+    display:block;
+
+}
+
+/* Heading */
+
+.step h2{
+
+    color:#4d3586;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.step p{
+
+    color:#73618f;
+
+    margin-bottom:30px;
+
+    line-height:26px;
+
+}
+
+/* Inputs */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#5d4293;
+
+    font-weight:500;
+
+    font-size:15px;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.82);
+
+    font-size:15px;
+
+    color:#444;
+
+    transition:.3s;
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.04);
+
+}
+
+textarea{
+
+    min-height:120px;
+
+    resize:none;
+
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+
+    border:1px solid #b388ff;
+
+    box-shadow:
+    0 0 0 4px rgba(179,136,255,.18);
+
+}
+
+/* File Upload */
+
+input[type=file]{
+
+    padding:15px;
+
+    background:white;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.backBtn{
+
+    width:160px;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:#6c4eb5;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.05);
+
+}
+
+.backBtn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.nextBtn{
+
+    flex:1;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:
+    0 15px 25px rgba(124,77,255,.30);
+
+}
+
+.nextBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 20px 35px rgba(124,77,255,.40);
+
+}
+
+/* Animation */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.container{
+
+padding:18px;
+
+}
+
+.glass-card{
+
+padding:25px;
+
+border-radius:24px;
+
+}
+
+.step h2{
+
+font-size:25px;
+
+}
+
+.progress-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:8px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+.backBtn{
+
+width:100%;
+
+}
+
+.nextBtn{
+
+width:100%;
+
+}
+
+}
+/* ===========================================
+   AI INTERVIEW CARD
+=========================================== */
+
+.ai-card{
+
+    margin-top:30px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.45);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+}
+
+.ai-card i{
+
+    font-size:70px;
+
+    color:#7C4DFF;
+
+    margin-bottom:20px;
+
+}
+
+.ai-card h3{
+
+    font-size:28px;
+
+    color:#52378f;
+
+    margin-bottom:15px;
+
+}
+
+.ai-card p{
+
+    color:#666;
+
+    line-height:28px;
+
+    margin-bottom:25px;
+
+}
+
+#startInterview{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#B388FF,#7C4DFF);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#startInterview:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================================
+   SUMMARY CARD
+=========================================== */
+
+.summary-card{
+
+    background:rgba(255,255,255,.55);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:18px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+}
+
+.summary-card h3{
+
+    color:#5c3fa3;
+
+    margin-bottom:10px;
+
+}
+
+.summary-card p{
+
+    margin:0;
+
+    color:#666;
+
+    line-height:25px;
+
+}
+
+/* ===========================================
+   FINISH SCREEN
+=========================================== */
+
+.finish{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.finish i{
+
+    font-size:90px;
+
+    color:#7C4DFF;
+
+    margin-bottom:20px;
+
+}
+
+.finish h1{
+
+    color:#513589;
+
+    margin-bottom:15px;
+
+}
+
+.finish p{
+
+    color:#666;
+
+    margin-bottom:35px;
+
+    line-height:28px;
+
+}
+
+#finishProfile{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#B388FF,#7C4DFF);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+/* ===========================================
+   IMAGE UPLOAD
+=========================================== */
+
+input[type=file]{
+
+    cursor:pointer;
+
+}
+
+input[type=file]::file-selector-button{
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    background:#B388FF;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-right:15px;
+
+}
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b388ff;
+
+    border-radius:20px;
+
+}
+
+/* ===========================================
+   PLACEHOLDER
+=========================================== */
+
+::placeholder{
+
+    color:#aaa;
+
+}
+
+/* ===========================================
+   SELECT
+=========================================== */
+
+select{
+
+    cursor:pointer;
+
+}
+
+/* ===========================================
+   HOVER EFFECT
+=========================================== */
+
+.glass-card:hover{
+
+    box-shadow:
+
+    0 30px 70px rgba(123,77,255,.22);
+
+}
+
+/* ===========================================
+   INPUT HOVER
+=========================================== */
+
+input:hover,
+textarea:hover,
+select:hover{
+
+    transform:translateY(-1px);
+
+}
+
+/* ===========================================
+   MOBILE
+=========================================== */
+
+@media(max-width:500px){
+
+.ai-card{
+
+padding:25px;
+
+}
+
+.ai-card i{
+
+font-size:55px;
+
+}
+
+.finish i{
+
+font-size:70px;
+
+}
+
+.summary-card{
+
+padding:18px;
+
+}
+
+}
