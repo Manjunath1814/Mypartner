@@ -1,0 +1,391 @@
+/* ===================================
+   VIVAHA ONBOARDING
+   Light Purple Glassmorphism
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #faf7ff,
+        #f4edff,
+        #ede2ff
+    );
+
+}
+
+/* Background Blobs */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    background:#d4bbff;
+
+    top:-150px;
+    left:-120px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.7;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    background:#b388ff;
+
+    bottom:-150px;
+    right:-120px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.6;
+
+    z-index:-2;
+
+}
+
+/* Container */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Glass Card */
+
+.glass-card{
+
+    width:100%;
+    max-width:470px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.28);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+    0 20px 45px rgba(124,77,255,.18);
+
+    animation:fadeUp .7s ease;
+
+}
+
+/* Logo */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo h1{
+
+    font-size:40px;
+
+    color:#6b42c8;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.logo p{
+
+    color:#6d6590;
+
+    font-size:15px;
+
+    line-height:24px;
+
+}
+
+/* Progress */
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#e9dcff;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:30px;
+
+}
+
+.progress-fill{
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+}
+
+/* Form */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#5a3d93;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.85);
+
+    font-size:15px;
+
+    color:#444;
+
+    transition:.3s;
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.05);
+
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border:1px solid #B388FF;
+
+    box-shadow:
+    0 0 0 4px rgba(179,136,255,.18);
+
+}
+
+.input-group input::placeholder{
+
+    color:#aaa;
+
+}
+
+/* Readonly */
+
+input[readonly]{
+
+    background:#f7f2ff;
+
+    color:#6b42c8;
+
+    font-weight:600;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    height:58px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #B388FF,
+        #7C4DFF
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 15px 30px rgba(124,77,255,.30);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 20px 40px rgba(124,77,255,.38);
+
+}
+
+/* Animation */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B388FF;
+
+    border-radius:20px;
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .glass-card{
+
+        padding:28px 22px;
+
+        border-radius:24px;
+
+    }
+
+    .logo h1{
+
+        font-size:34px;
+
+    }
+
+    .logo p{
+
+        font-size:14px;
+
+    }
+
+    .input-group input,
+    .input-group select{
+
+        height:54px;
+
+    }
+
+    button{
+
+        height:54px;
+
+    }
+
+}
