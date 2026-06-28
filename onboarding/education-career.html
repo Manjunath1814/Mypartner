@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vivaha • Education & Career</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="../css/education-career.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="top-section">
+
+        <div class="step">
+
+            Step 2 of 8
+
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-fill step2"></div>
+
+        </div>
+
+    </div>
+
+    <div class="glass-card fade">
+
+        <div class="logo">
+
+            🎓
+
+        </div>
+
+        <h1>Education & Career</h1>
+
+        <p class="subtitle">
+
+            Tell us about your education and professional journey.
+
+        </p>
+
+        <form id="educationForm">
+
+            <div class="input-group">
+
+                <label>Highest Education</label>
+
+                <select id="education" required>
+
+                    <option value="">Select</option>
+
+                    <option>High School</option>
+
+                    <option>Diploma</option>
+
+                    <option>Bachelor's Degree</option>
+
+                    <option>Master's Degree</option>
+
+                    <option>Doctorate</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Occupation</label>
+
+                <input
+                type="text"
+                id="occupation"
+                placeholder="Software Engineer">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Company</label>
+
+                <input
+                type="text"
+                id="company"
+                placeholder="Company Name">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Annual Income</label>
+
+                <select id="income">
+
+                    <option value="">Select</option>
+
+                    <option>Below ₹3 Lakh</option>
+
+                    <option>₹3 - ₹5 Lakh</option>
+
+                    <option>₹5 - ₹10 Lakh</option>
+
+                    <option>₹10 - ₹20 Lakh</option>
+
+                    <option>₹20 - ₹50 Lakh</option>
+
+                    <option>Above ₹50 Lakh</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Work Location</label>
+
+                <input
+                type="text"
+                id="workLocation"
+                placeholder="Bengaluru">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Employment Type</label>
+
+                <select id="employmentType">
+
+                    <option value="">Select</option>
+
+                    <option>Private</option>
+
+                    <option>Government</option>
+
+                    <option>Business</option>
+
+                    <option>Self Employed</option>
+
+                    <option>Student</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Professional Summary</label>
+
+                <textarea
+                id="summary"
+                rows="5"
+                placeholder="Tell us a little about your career..."></textarea>
+
+            </div>
+
+            <div id="errorBox"></div>
+
+            <div class="button-area">
+
+                <button
+                type="button"
+                class="secondary"
+                onclick="window.location.href='basic-details.html'">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+                <button
+                class="primary"
+                id="continueBtn"
+                disabled>
+
+                    Continue
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script type="module" src="../js/education-career.js"></script>
+
+</body>
+
+</html>
