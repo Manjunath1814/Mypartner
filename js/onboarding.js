@@ -197,30 +197,29 @@ function updateProgress() {
 // Navigation Events
 // ======================================================
 
-nextButtons.forEach((button) => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    button.addEventListener("click", async () => {
+    nextButtons.forEach(button => {
 
-        const valid = validateCurrentStep();
+        button.addEventListener("click", async () => {
 
-        if (!valid) return;
+            const valid = validateCurrentStep();
 
-        collectStepData();
+            if (!valid) return;
 
-        await saveStep();
+            collectStepData();
 
-        nextStep();
+            await saveStep();
+
+            nextStep();
+
+        });
 
     });
 
-});
+    prevButtons.forEach(button => {
 
-
-prevButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        previousStep();
+        button.addEventListener("click", previousStep);
 
     });
 
