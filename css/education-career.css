@@ -1,0 +1,241 @@
+/* ===========================
+   Vivaha Premium Onboarding
+   Step 2 - Education & Career
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --primary:#B388FF;
+    --secondary:#7C4DFF;
+    --bg:#F8F4FF;
+    --text:#333;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#F8F4FF,#F2ECFF,#ECE2FF);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(179,136,255,.28),
+    transparent 35%),
+    radial-gradient(circle at bottom right,
+    rgba(124,77,255,.20),
+    transparent 40%);
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:650px;
+}
+
+.top-section{
+    margin-bottom:22px;
+}
+
+.step{
+    font-size:15px;
+    color:#666;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    border-radius:100px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.progress-fill{
+    height:100%;
+    width:25%;
+    border-radius:100px;
+    background:linear-gradient(90deg,#B388FF,#7C4DFF);
+}
+
+.glass-card{
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.58);
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:
+    0 25px 60px rgba(124,77,255,.12),
+    0 8px 20px rgba(0,0,0,.08);
+    animation:fadeUp .45s ease;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    border-radius:22px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    background:linear-gradient(135deg,#B388FF,#7C4DFF);
+    color:#fff;
+    margin-bottom:18px;
+}
+
+h1{
+    text-align:center;
+    font-size:31px;
+    color:#333;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin:10px 0 30px;
+    line-height:1.7;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#555;
+    font-weight:600;
+    font-size:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    resize:none;
+    border-radius:18px;
+    background:#fff;
+    font-size:15px;
+    transition:.3s;
+}
+
+textarea{
+    min-height:130px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    box-shadow:0 0 0 5px rgba(179,136,255,.18);
+    transform:translateY(-1px);
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+    transform:translateY(-1px);
+}
+
+#errorBox{
+    color:#ff3b30;
+    min-height:20px;
+    margin-top:10px;
+    font-size:14px;
+}
+
+.button-area{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+button{
+    flex:1;
+    border:none;
+    padding:16px;
+    border-radius:18px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.primary{
+    color:white;
+    background:linear-gradient(135deg,#B388FF,#7C4DFF);
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(124,77,255,.25);
+}
+
+.secondary{
+    background:white;
+    color:#666;
+}
+
+.secondary:hover{
+    transform:translateY(-3px);
+}
+
+button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(25px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:600px){
+
+body{
+padding:18px;
+}
+
+.glass-card{
+padding:24px;
+}
+
+h1{
+font-size:25px;
+}
+
+.button-area{
+flex-direction:column;
+}
+
+button{
+width:100%;
+}
+
+}
