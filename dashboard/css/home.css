@@ -854,27 +854,24 @@ width:100%;
 
 .bottom-nav a.active i{
 
-    width:48px;
+    width:52px;
+    height:52px;
 
-    height:48px;
-
-    border-radius:16px;
+    border-radius:50%;
 
     display:flex;
-
+    justify-content:center;
     align-items:center;
 
-    justify-content:center;
-
     background:linear-gradient(
-    135deg,
-    #B388FF,
-    #7C4DFF
+        135deg,
+        #B388FF,
+        #7C4DFF
     );
 
     color:white;
 
-    box-shadow:0 15px 25px rgba(124,77,255,.35);
+    box-shadow:0 10px 25px rgba(124,77,255,.35);
 
     margin-bottom:6px;
 
