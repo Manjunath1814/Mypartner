@@ -404,3 +404,376 @@ window.location="dashboard/home.html";
 
 showStep(currentStep);
 
+// =============================
+// onboarding.js PART 2
+// Firebase Storage + AI Hooks
+// =============================
+
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js";
+
+import {
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+const storage = getStorage();
+
+// ====================================
+// Upload Images
+// ====================================
+
+async function uploadFile(file, path){
+
+    if(!file) return null;
+
+    const storageRef = ref(storage, path);
+
+    await uploadBytes(storageRef,file);
+
+    const url = await getDownloadURL(storageRef);
+
+    return url;
+
+}
+
+async function saveUploads(uid){
+
+    const profile=document.getElementById("photo1").files[0];
+
+    const gallery=document.getElementById("photo2").files;
+
+    const video=document.getElementById("video").files[0];
+
+    let profileUrl="";
+
+    let galleryUrls=[];
+
+    let videoUrl="";
+
+    if(profile){
+
+        profileUrl=await uploadFile(
+
+            profile,
+
+            `users/${uid}/profile.jpg`
+
+        );
+
+    }
+
+    if(gallery.length){
+
+        for(let i=0;i<gallery.length;i++){
+
+            const url=await uploadFile(
+
+                gallery[i],
+
+                `users/${uid}/gallery_${i}.jpg`
+
+            );
+
+            galleryUrls.push(url);
+
+        }
+
+    }
+
+    if(video){
+
+        videoUrl=await uploadFile(
+
+            video,
+
+            `users/${uid}/intro.mp4`
+
+        );
+
+    }
+
+    await updateDoc(
+
+        doc(db,"users",uid),
+
+        {
+
+            profilePhoto:profileUrl,
+
+            gallery:galleryUrls,
+
+            introVideo:videoUrl
+
+        }
+
+    );
+
+}
+
+// ====================================
+// AI Interview Button
+// ====================================
+
+const interviewBtn=document.getElementById("startInterview");
+
+if(interviewBtn){
+
+interviewBtn.addEventListener("click",()=>{
+
+window.location.href="ai-interview.html";
+
+});
+
+}
+
+// ====================================
+// AI Summary Loader
+// ====================================
+
+async function loadAISummary(){
+
+const user=auth.currentUser;
+
+if(!user) return;
+
+const snapshot=await getDoc(
+
+doc(db,"users",user.uid)
+
+);
+
+if(!snapshot.exists()) return;
+
+const data=snapshot.data();
+
+document.getElementById("personality").innerHTML=
+
+data.personality || "Not Generated";
+
+document.getElementById("communication").innerHTML=
+
+data.communication || "Not Generated";
+
+document.getElementById("readiness").innerHTML=
+
+data.readiness || "Not Generated";
+
+document.getElementById("tags").innerHTML=
+
+data.tags || "Not Generated";
+
+}
+
+// ====================================
+// Auto Load Summary
+// ====================================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+if(document.getElementById("personality")){
+
+loadAISummary();
+
+}
+
+});
+
+// ====================================
+// Auto Save Draft Every 30 Seconds
+// ====================================
+
+setInterval(async()=>{
+
+const user=auth.currentUser;
+
+if(!user) return;
+
+try{
+
+switch(currentStep){
+
+case 0:
+
+await saveBasic(user.uid);
+
+break;
+
+case 1:
+
+await saveEducation(user.uid);
+
+break;
+
+case 2:
+
+await saveFamily(user.uid);
+
+break;
+
+case 3:
+
+await savePartner(user.uid);
+
+break;
+
+}
+
+}catch(e){
+
+console.log(e);
+
+}
+
+},30000);
+
+// ====================================
+// Resume Progress
+// ====================================
+
+async function resumeOnboarding(){
+
+const user=auth.currentUser;
+
+if(!user) return;
+
+const snapshot=await getDoc(
+
+doc(db,"users",user.uid)
+
+);
+
+if(!snapshot.exists()) return;
+
+const data=snapshot.data();
+
+if(data.currentStep){
+
+currentStep=data.currentStep;
+
+showStep(currentStep);
+
+}
+
+}
+
+resumeOnboarding();
+
+// ====================================
+// Save Current Step
+// ====================================
+
+async function updateCurrentStep(){
+
+const user=auth.currentUser;
+
+if(!user) return;
+
+await updateDoc(
+
+doc(db,"users",user.uid),
+
+{
+
+currentStep:currentStep
+
+}
+
+);
+
+}
+
+nextBtns.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+updateCurrentStep();
+
+});
+
+});
+
+// ====================================
+// Preview Profile Image
+// ====================================
+
+const profileInput=document.getElementById("photo1");
+
+if(profileInput){
+
+profileInput.addEventListener("change",(e)=>{
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+let img=document.getElementById("previewImage");
+
+if(!img){
+
+img=document.createElement("img");
+
+img.id="previewImage";
+
+img.style.width="120px";
+
+img.style.height="120px";
+
+img.style.borderRadius="50%";
+
+img.style.objectFit="cover";
+
+img.style.marginTop="20px";
+
+profileInput.parentNode.appendChild(img);
+
+}
+
+img.src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+// ====================================
+// Finish Profile
+// ====================================
+
+if(finish){
+
+finish.addEventListener("click",async()=>{
+
+await updateDoc(
+
+doc(db,"users",auth.currentUser.uid),
+
+{
+
+onboardingComplete:true,
+
+currentStep:8,
+
+completedAt:serverTimestamp()
+
+}
+
+);
+
+window.location.href="dashboard/home.html";
+
+});
+
+}
