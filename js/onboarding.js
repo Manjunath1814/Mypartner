@@ -128,20 +128,14 @@ onAuthStateChanged(auth, async (user) => {
 
 function showStep(step) {
 
-    steps.forEach((section) => {
-
-        section.classList.remove("active");
-
+    steps.forEach(stepElement => {
+        stepElement.classList.remove("active");
     });
 
-    const activeStep = document.querySelector(
-        `.step[data-step="${step}"]`
-    );
+    const activeStep = document.querySelector(`.step[data-step="${step}"]`);
 
     if (activeStep) {
-
         activeStep.classList.add("active");
-
     }
 
     currentStep = step;
