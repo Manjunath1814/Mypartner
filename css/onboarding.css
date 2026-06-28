@@ -11,16 +11,10 @@
 }
 
 body{
-
     min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
-
-    overflow:hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
 
     background:linear-gradient(
         135deg,
@@ -86,12 +80,13 @@ body::after{
 .container{
 
     width:100%;
+    min-height:100vh;
 
     display:flex;
-
     justify-content:center;
+    align-items:flex-start;
 
-    align-items:center;
+    padding:40px 20px;
 
 }
 
@@ -100,27 +95,15 @@ body::after{
 .glass-card{
 
     width:100%;
-    max-width:470px;
+    max-width:520px;
 
     padding:40px;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.28);
-
-    backdrop-filter:blur(22px);
-
-    -webkit-backdrop-filter:blur(22px);
-
-    border:1px solid rgba(255,255,255,.35);
-
-    box-shadow:
-    0 20px 45px rgba(124,77,255,.18);
-
-    animation:fadeUp .7s ease;
+    height:auto;
 
 }
-
 /* Logo */
 
 .logo{
