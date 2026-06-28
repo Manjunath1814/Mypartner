@@ -122,13 +122,13 @@ function calculateProfile(data){
 // Bottom Navigation
 // ==========================
 
-const navItems=document.querySelectorAll(".bottom-nav a");
+const navItems = document.querySelectorAll(".bottom-nav a");
 
-navItems.forEach(item=>{
+navItems.forEach(item => {
 
-    item.addEventListener("click",()=>{
+    item.addEventListener("click", () => {
 
-        navItems.forEach(nav=>{
+        navItems.forEach(nav => {
 
             nav.classList.remove("active");
 
@@ -140,6 +140,40 @@ navItems.forEach(item=>{
 
 });
 
+// Home
+navItems[0].onclick = () => {
+
+    window.location.href = "home.html";
+
+};
+
+// Explore
+navItems[1].onclick = () => {
+
+    window.location.href = "../explore/explore.html";
+
+};
+
+// Matches
+navItems[2].onclick = () => {
+
+    window.location.href = "../matches/matches.html";
+
+};
+
+// Chat
+navItems[3].onclick = () => {
+
+    window.location.href = "../chat/chat.html";
+
+};
+
+// Profile
+navItems[4].onclick = () => {
+
+    window.location.href = "../profile/profile.html";
+
+};
 
 
 // ==========================
