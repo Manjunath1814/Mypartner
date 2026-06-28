@@ -27,8 +27,9 @@ let uid = null;
 /* -----------------------------
    Wait for Login
 ----------------------------- */
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
-auth.onAuthStateChanged(async (user) => {
+onAuthStateChanged(auth, async (user) => {
 
     if (!user) {
         window.location.href = "../login.html";
