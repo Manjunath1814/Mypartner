@@ -1,0 +1,885 @@
+/*==================================================
+            VIVAHA - NOTIFICATIONS
+                CSS PART 1
+===================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==================================================
+ROOT
+===================================================*/
+
+:root{
+
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+
+    --primary:#6A4C93;
+    --gold:#D4AF37;
+
+    --text:#222222;
+    --text-light:#666666;
+
+    --border:#ECE5D8;
+
+    --shadow:0 8px 24px rgba(0,0,0,.06);
+
+    --card-radius:18px;
+    --button-radius:14px;
+    --input-radius:12px;
+
+}
+
+/*==================================================
+RESET
+===================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+    min-height:100vh;
+
+    padding-bottom:95px;
+
+}
+
+/*==================================================
+HEADER
+===================================================*/
+
+.top-header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:72px;
+
+    background:#FFFFFF;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+}
+
+.logo{
+
+    font-size:22px;
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.header-right{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    background:#F5F2EC;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.icon-btn:hover{
+
+    background:#ECE6DA;
+
+}
+
+.icon-btn i{
+
+    font-size:21px;
+    color:var(--text);
+
+}
+
+.header-profile{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--gold);
+
+    cursor:pointer;
+
+}
+
+/*==================================================
+PAGE
+===================================================*/
+
+.notifications-page{
+
+    width:100%;
+    max-width:560px;
+
+    margin:auto;
+
+    padding:18px;
+
+}
+
+/*==================================================
+HERO CARD
+===================================================*/
+
+.hero-card{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:18px;
+
+}
+
+.hero-card h2{
+
+    font-size:28px;
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.hero-card p{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.hero-card button{
+
+    border:none;
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    height:46px;
+
+    padding:0 18px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:.25s;
+
+}
+
+.hero-card button:hover{
+
+    background:#5A3F81;
+
+}
+
+/*==================================================
+SUMMARY
+===================================================*/
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:22px;
+
+}
+
+.summary-card{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:18px 10px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.summary-card h3{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    margin-bottom:5px;
+
+}
+
+.summary-card span{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.summary-card.unread{
+
+    border-color:var(--gold);
+
+}
+
+.summary-card.unread h3{
+
+    color:var(--gold);
+
+}
+
+/*==================================================
+FILTER TABS
+===================================================*/
+
+.filter-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding-bottom:6px;
+
+    margin-bottom:22px;
+
+    scrollbar-width:none;
+
+}
+
+.filter-tabs::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.filter-btn{
+
+    border:none;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    padding:11px 20px;
+
+    color:var(--text);
+
+    font-size:14px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    transition:.25s;
+
+}
+
+.filter-btn.active{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    border-color:var(--primary);
+
+}
+
+.filter-btn:hover{
+
+    border-color:var(--primary);
+
+}
+
+/*==================================================
+SECTION TITLE
+===================================================*/
+
+.notification-group h4{
+
+    margin-bottom:16px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+/*==================================================
+NOTIFICATION LIST
+===================================================*/
+
+#notificationList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+/*==================================================
+        VIVAHA - NOTIFICATIONS
+            CSS PART 2
+===================================================*/
+
+/*==================================================
+NOTIFICATION CARD
+===================================================*/
+
+.notification-card{
+
+    position:relative;
+
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    padding:16px;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+    transition:.25s ease;
+
+}
+
+.notification-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+
+/*==================================================
+UNREAD CARD
+===================================================*/
+
+.notification-card.unread{
+
+    border-left:4px solid var(--primary);
+
+}
+
+.notification-card.unread::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+}
+
+/*==================================================
+AVATAR
+===================================================*/
+
+.notification-avatar{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid #FFFFFF;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    flex-shrink:0;
+
+}
+
+/*==================================================
+ICON AVATAR
+===================================================*/
+
+.notification-icon{
+
+    width:58px;
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#FFFFFF;
+
+    font-size:26px;
+
+    flex-shrink:0;
+
+}
+
+.icon-message{
+    background:#6A4C93;
+}
+
+.icon-match{
+    background:#D4AF37;
+}
+
+.icon-ai{
+    background:#2D9CDB;
+}
+
+.icon-premium{
+    background:#8C6A00;
+}
+
+.icon-verify{
+    background:#27AE60;
+}
+
+.icon-profile{
+    background:#F2994A;
+}
+
+/*==================================================
+CONTENT
+===================================================*/
+
+.notification-content{
+
+    flex:1;
+
+}
+
+.notification-content h3{
+
+    font-size:16px;
+    font-weight:600;
+
+    color:var(--text);
+
+    margin-bottom:5px;
+
+}
+
+.notification-content p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+.notification-time{
+
+    display:inline-flex;
+
+    align-items:center;
+    gap:6px;
+
+    margin-top:10px;
+
+    color:#999999;
+
+    font-size:12px;
+
+}
+
+.notification-time i{
+
+    font-size:14px;
+
+}
+
+/*==================================================
+ACTION BUTTON
+===================================================*/
+
+.notification-action{
+
+    margin-top:14px;
+
+}
+
+.notification-action button{
+
+    border:none;
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.notification-action button:hover{
+
+    background:#593D81;
+
+}
+
+/*==================================================
+EMPTY STATE
+===================================================*/
+
+.empty-state{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:50px 25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    margin-top:30px;
+
+}
+
+.empty-state i{
+
+    font-size:64px;
+
+    color:var(--primary);
+
+    margin-bottom:16px;
+
+}
+
+.empty-state h3{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+.empty-state button{
+
+    border:none;
+
+    background:var(--gold);
+
+    color:#FFFFFF;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+/*==================================================
+FLOATING BUTTON
+===================================================*/
+
+.floating-btn{
+
+    position:fixed;
+
+    right:20px;
+    bottom:95px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--gold);
+
+    color:#FFFFFF;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 28px rgba(212,175,55,.35);
+
+    transition:.25s;
+
+    z-index:998;
+
+}
+
+.floating-btn:hover{
+
+    transform:scale(1.06);
+
+}
+
+.floating-btn i{
+
+    font-size:26px;
+
+}
+
+/*==================================================
+BOTTOM NAVIGATION
+===================================================*/
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:72px;
+
+    background:#FFFFFF;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.bottom-nav a{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-decoration:none;
+
+    color:var(--text-light);
+
+    transition:.25s;
+
+}
+
+.bottom-nav a i{
+
+    font-size:22px;
+
+}
+
+.bottom-nav a span{
+
+    font-size:11px;
+    font-weight:500;
+
+}
+
+.bottom-nav a.active,
+.bottom-nav a:hover{
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+ANIMATION
+===================================================*/
+
+.notification-card{
+
+    animation:fadeUp .35s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(16px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+SCROLLBAR
+===================================================*/
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D7D0C4;
+
+    border-radius:20px;
+
+}
+
+/*==================================================
+RESPONSIVE
+===================================================*/
+
+@media (min-width:768px){
+
+    .notifications-page{
+
+        max-width:600px;
+
+    }
+
+    .hero-card{
+
+        padding:26px;
+
+    }
+
+    .notification-avatar,
+    .notification-icon{
+
+        width:64px;
+        height:64px;
+
+    }
+
+    .notification-content h3{
+
+        font-size:17px;
+
+    }
+
+}
