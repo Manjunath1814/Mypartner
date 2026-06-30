@@ -1,0 +1,768 @@
+/*=========================================
+        VIVAHA - CHAT
+        CSS PART 1
+==========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================
+ROOT
+==========================================*/
+
+:root{
+
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+
+    --primary:#6A4C93;
+    --gold:#D4AF37;
+
+    --text:#222222;
+    --text-light:#666666;
+
+    --border:#ECE5D8;
+
+    --shadow:0 8px 24px rgba(0,0,0,.06);
+
+    --card-radius:18px;
+    --button-radius:14px;
+    --input-radius:12px;
+
+}
+
+/*=========================================
+RESET
+==========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+    min-height:100vh;
+
+    padding-bottom:95px;
+
+}
+
+/*=========================================
+HEADER
+==========================================*/
+
+.top-header{
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    height:72px;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 18px;
+
+}
+
+.logo{
+
+    font-size:22px;
+    font-weight:700;
+    color:var(--primary);
+
+}
+
+.header-right{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    background:#F5F2EC;
+
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.icon-btn:hover{
+
+    background:#ECE6DA;
+
+}
+
+.icon-btn i{
+
+    font-size:22px;
+    color:var(--text);
+
+}
+
+.header-profile{
+
+    width:42px;
+    height:42px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:2px solid var(--gold);
+
+    cursor:pointer;
+
+}
+
+/*=========================================
+PAGE
+==========================================*/
+
+.chat-page{
+
+    width:100%;
+    max-width:520px;
+
+    margin:auto;
+
+    padding:18px;
+
+}
+
+/*=========================================
+PAGE TITLE
+==========================================*/
+
+.page-heading{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:22px;
+
+}
+
+.page-heading h2{
+
+    font-size:28px;
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.page-heading p{
+
+    margin-top:4px;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.filter-btn{
+
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+}
+
+.filter-btn i{
+
+    font-size:22px;
+
+    color:var(--primary);
+
+}
+
+/*=========================================
+SEARCH
+==========================================*/
+
+.search-section{
+
+    margin-bottom:22px;
+
+}
+
+.search-box{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:14px 16px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.search-box i{
+
+    font-size:20px;
+
+    color:#888;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    border:none;
+    outline:none;
+
+    font-size:15px;
+
+    background:transparent;
+
+    color:var(--text);
+
+}
+
+.search-box input::placeholder{
+
+    color:#999;
+
+}
+
+/*=========================================
+CHAT STATS
+==========================================*/
+
+.chat-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+}
+
+.stat-card{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:18px 12px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.stat-card h3{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    margin-bottom:5px;
+
+}
+
+.stat-card span{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+/*=========================================
+SECTION TITLE
+==========================================*/
+
+.section-title{
+
+    margin-bottom:16px;
+
+}
+
+.section-title h3{
+
+    font-size:19px;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+CHAT LIST
+==========================================*/
+
+.chat-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+  }
+/*=========================================
+        VIVAHA - CHAT
+        CSS PART 2
+==========================================*/
+
+/*=========================================
+CHAT CARD
+==========================================*/
+
+.chat-card{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    padding:14px;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+    transition:.25s ease;
+
+}
+
+.chat-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+
+.chat-avatar{
+
+    position:relative;
+    flex-shrink:0;
+
+}
+
+.chat-avatar img{
+
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:2px solid #fff;
+
+}
+
+.online-dot{
+
+    position:absolute;
+
+    bottom:2px;
+    right:2px;
+
+    width:14px;
+    height:14px;
+
+    background:#22C55E;
+
+    border:2px solid #fff;
+
+    border-radius:50%;
+
+}
+
+.chat-content{
+
+    flex:1;
+    min-width:0;
+
+}
+
+.chat-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:6px;
+
+}
+
+.chat-name{
+
+    font-size:16px;
+    font-weight:600;
+    color:var(--text);
+
+}
+
+.chat-time{
+
+    font-size:12px;
+    color:var(--text-light);
+
+    white-space:nowrap;
+
+}
+
+.chat-bottom{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+
+}
+
+.last-message{
+
+    flex:1;
+
+    font-size:14px;
+    color:var(--text-light);
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+
+.unread-badge{
+
+    min-width:24px;
+    height:24px;
+
+    padding:0 7px;
+
+    border-radius:30px;
+
+    background:var(--primary);
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:12px;
+    font-weight:600;
+
+}
+
+.read-status{
+
+    color:#9AA0A6;
+    font-size:18px;
+
+}
+
+.double-tick{
+
+    color:#3B82F6;
+}
+
+/*=========================================
+EMPTY STATE
+==========================================*/
+
+.empty-chat{
+
+    text-align:center;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    padding:40px 20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.empty-chat i{
+
+    font-size:60px;
+    color:var(--primary);
+
+    margin-bottom:16px;
+
+}
+
+.empty-chat h3{
+
+    font-size:20px;
+    margin-bottom:8px;
+
+}
+
+.empty-chat p{
+
+    font-size:14px;
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+/*=========================================
+FLOATING BUTTON
+==========================================*/
+
+.floating-btn{
+
+    position:fixed;
+
+    right:20px;
+    bottom:95px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    background:var(--gold);
+    color:#fff;
+
+    border-radius:16px;
+
+    box-shadow:0 12px 30px rgba(212,175,55,.35);
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.25s;
+
+    z-index:998;
+
+}
+
+.floating-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.floating-btn i{
+
+    font-size:26px;
+
+}
+
+/*=========================================
+BOTTOM NAVIGATION
+==========================================*/
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:72px;
+
+    background:#fff;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.bottom-nav a{
+
+    flex:1;
+
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    color:var(--text-light);
+
+    transition:.25s;
+
+}
+
+.bottom-nav a i{
+
+    font-size:22px;
+
+}
+
+.bottom-nav a span{
+
+    font-size:11px;
+    font-weight:500;
+
+}
+
+.bottom-nav a.active{
+
+    color:var(--primary);
+
+}
+
+.bottom-nav a:hover{
+
+    color:var(--primary);
+
+}
+
+/*=========================================
+SCROLLBAR
+==========================================*/
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D7D0C4;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*=========================================
+ANIMATIONS
+==========================================*/
+
+.chat-card{
+
+    animation:fadeUp .35s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(16px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================
+RESPONSIVE
+==========================================*/
+
+@media (min-width:768px){
+
+    .chat-page{
+
+        max-width:560px;
+
+    }
+
+    .chat-avatar img{
+
+        width:70px;
+        height:70px;
+
+    }
+
+    .chat-name{
+
+        font-size:17px;
+
+    }
+
+    .last-message{
+
+        font-size:15px;
+
+    }
+
+      }
