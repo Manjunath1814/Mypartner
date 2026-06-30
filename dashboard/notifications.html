@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivaha • Notifications</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/notifications.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- HEADER -->
+    <!-- ========================================= -->
+
+    <header class="top-header">
+
+        <button class="icon-btn" id="menuBtn">
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <div class="logo">
+            Vivaha
+        </div>
+
+        <div class="header-right">
+
+            <button class="icon-btn" onclick="window.location='settings.html'">
+                <i class="ri-settings-3-line"></i>
+            </button>
+
+            <img src="../assets/images/profile.jpg"
+                class="header-profile"
+                onclick="window.location='profile.html'">
+
+        </div>
+
+    </header>
+
+    <!-- ========================================= -->
+    <!-- MAIN -->
+    <!-- ========================================= -->
+
+    <main class="notifications-page">
+
+        <!-- Hero -->
+
+        <section class="hero-card">
+
+            <div>
+
+                <h2>Notifications</h2>
+
+                <p>Stay updated with your Vivaha journey.</p>
+
+            </div>
+
+            <button id="markAllBtn">
+
+                <i class="ri-check-double-line"></i>
+
+                Mark All Read
+
+            </button>
+
+        </section>
+
+        <!-- Summary -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <h3 id="totalNotifications">18</h3>
+
+                <span>Total</span>
+
+            </div>
+
+            <div class="summary-card unread">
+
+                <h3 id="unreadNotifications">5</h3>
+
+                <span>Unread</span>
+
+            </div>
+
+            <div class="summary-card">
+
+                <h3>96%</h3>
+
+                <span>AI Match</span>
+
+            </div>
+
+        </section>
+
+        <!-- Filter -->
+
+        <section class="filter-tabs">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="message">
+                Messages
+            </button>
+
+            <button class="filter-btn" data-filter="match">
+                Matches
+            </button>
+
+            <button class="filter-btn" data-filter="ai">
+                AI
+            </button>
+
+            <button class="filter-btn" data-filter="premium">
+                Premium
+            </button>
+
+        </section>
+
+        <!-- Today -->
+
+        <div class="notification-group">
+
+            <h4>Today</h4>
+
+            <div id="notificationList">
+
+                <!-- Filled using JavaScript -->
+
+            </div>
+
+        </div>
+
+        <!-- Empty State -->
+
+        <section class="empty-state" id="emptyState" style="display:none;">
+
+            <i class="ri-notification-off-line"></i>
+
+            <h3>No Notifications</h3>
+
+            <p>
+                You're all caught up! New activities will appear here.
+            </p>
+
+            <button onclick="window.location='explore.html'">
+
+                Explore Profiles
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- FLOATING BUTTON -->
+    <!-- ========================================= -->
+
+    <button class="floating-btn"
+        onclick="window.location='explore.html'">
+
+        <i class="ri-user-search-line"></i>
+
+    </button>
+
+    <!-- ========================================= -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ========================================= -->
+
+    <nav class="bottom-nav">
+
+        <a href="home.html">
+
+            <i class="ri-home-5-line"></i>
+
+            <span>Home</span>
+
+        </a>
+
+        <a href="explore.html">
+
+            <i class="ri-search-line"></i>
+
+            <span>Explore</span>
+
+        </a>
+
+        <a href="matches.html">
+
+            <i class="ri-heart-3-line"></i>
+
+            <span>Matches</span>
+
+        </a>
+
+        <a href="chat.html">
+
+            <i class="ri-chat-3-line"></i>
+
+            <span>Chat</span>
+
+        </a>
+
+        <a href="profile.html">
+
+            <i class="ri-user-3-line"></i>
+
+            <span>Profile</span>
+
+        </a>
+
+    </nav>
+
+    <script src="js/notifications.js"></script>
+
+</body>
+
+</html>
