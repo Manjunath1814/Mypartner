@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivaha • Chat</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/chat-room.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- CHAT HEADER -->
+    <!-- ========================= -->
+
+    <header class="chat-header">
+
+        <button class="back-btn" onclick="window.location='chat.html'">
+            <i class="ri-arrow-left-line"></i>
+        </button>
+
+        <div class="user-info" onclick="window.location='view-profile.html'">
+
+            <div class="profile-wrapper">
+
+                <img src="../assets/images/profile1.jpg" alt="Profile">
+
+                <span class="online-dot"></span>
+
+            </div>
+
+            <div>
+
+                <h3>Priya Sharma</h3>
+
+                <p>Online</p>
+
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button onclick="window.location='voice-call.html'">
+                <i class="ri-phone-line"></i>
+            </button>
+
+            <button onclick="window.location='video-call.html'">
+                <i class="ri-vidicon-line"></i>
+            </button>
+
+            <button onclick="window.location='view-profile.html'">
+                <i class="ri-information-line"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- CHAT AREA -->
+    <!-- ========================= -->
+
+    <main class="chat-container" id="chatContainer">
+
+        <!-- Date -->
+
+        <div class="date-divider">
+            Today
+        </div>
+
+        <!-- Receive -->
+
+        <div class="message received">
+
+            <img src="../assets/images/profile1.jpg" class="message-avatar">
+
+            <div class="bubble">
+
+                <p>
+                    Hello 👋 Nice to connect with you on Vivaha.
+                </p>
+
+                <span>09:10 AM</span>
+
+            </div>
+
+        </div>
+
+        <!-- Send -->
+
+        <div class="message sent">
+
+            <div class="bubble">
+
+                <p>
+                    Thank you 😊 Happy to connect with you too.
+                </p>
+
+                <span>
+                    09:12 AM
+                    <i class="ri-check-double-line read"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Receive -->
+
+        <div class="message received">
+
+            <img src="../assets/images/profile1.jpg" class="message-avatar">
+
+            <div class="bubble">
+
+                <p>
+                    I went through your profile. We have many common interests.
+                </p>
+
+                <span>09:15 AM</span>
+
+            </div>
+
+        </div>
+
+        <!-- Send -->
+
+        <div class="message sent">
+
+            <div class="bubble">
+
+                <p>
+                    That's wonderful. I'd love to know more about your family and career.
+                </p>
+
+                <span>
+                    09:17 AM
+                    <i class="ri-check-double-line read"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Typing -->
+
+        <div class="typing-row" id="typingIndicator">
+
+            <img src="../assets/images/profile1.jpg" class="message-avatar">
+
+            <div class="typing-bubble">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- MESSAGE INPUT -->
+    <!-- ========================= -->
+
+    <footer class="chat-footer">
+
+        <button class="footer-btn">
+            <i class="ri-emotion-line"></i>
+        </button>
+
+        <button class="footer-btn">
+            <i class="ri-attachment-2"></i>
+        </button>
+
+        <button class="footer-btn">
+            <i class="ri-camera-line"></i>
+        </button>
+
+        <div class="message-box">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type your message...">
+
+        </div>
+
+        <button class="send-btn" id="sendBtn">
+
+            <i class="ri-send-plane-fill"></i>
+
+        </button>
+
+    </footer>
+
+    <script src="js/chat-room.js"></script>
+
+</body>
+
+</html>
