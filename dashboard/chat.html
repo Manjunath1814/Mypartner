@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivaha • Chats</title>
+
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/chat.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="top-header">
+
+        <button class="icon-btn">
+            <i class="ri-menu-line"></i>
+        </button>
+
+        <div class="logo">
+            Vivaha
+        </div>
+
+        <div class="header-right">
+
+            <button class="icon-btn" onclick="window.location='notifications.html'">
+                <i class="ri-notification-3-line"></i>
+            </button>
+
+            <img src="../assets/images/profile.jpg"
+                class="header-profile"
+                onclick="window.location='profile.html'">
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- PAGE -->
+    <!-- ========================= -->
+
+    <main class="chat-page">
+
+        <!-- Heading -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <h2>Messages</h2>
+
+                <p>Stay connected with your matches</p>
+
+            </div>
+
+            <button class="filter-btn">
+
+                <i class="ri-filter-3-line"></i>
+
+            </button>
+
+        </section>
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="ri-search-line"></i>
+
+                <input
+                    type="text"
+                    id="searchChat"
+                    placeholder="Search conversations">
+
+            </div>
+
+        </section>
+
+        <!-- Quick Stats -->
+
+        <section class="chat-stats">
+
+            <div class="stat-card">
+
+                <h3>24</h3>
+
+                <span>Total Chats</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>6</h3>
+
+                <span>Unread</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>12</h3>
+
+                <span>Online</span>
+
+            </div>
+
+        </section>
+
+        <!-- Recent -->
+
+        <section class="section-title">
+
+            <h3>Recent Conversations</h3>
+
+        </section>
+
+        <!-- Chat List -->
+
+        <section class="chat-list" id="chatList">
+
+            <!-- Filled by JS -->
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- Floating Button -->
+    <!-- ========================= -->
+
+    <button class="floating-btn"
+        onclick="window.location='matches.html'">
+
+        <i class="ri-user-heart-line"></i>
+
+    </button>
+
+    <!-- ========================= -->
+    <!-- Bottom Navigation -->
+    <!-- ========================= -->
+
+    <nav class="bottom-nav">
+
+        <a href="home.html">
+
+            <i class="ri-home-5-line"></i>
+
+            <span>Home</span>
+
+        </a>
+
+        <a href="explore.html">
+
+            <i class="ri-search-line"></i>
+
+            <span>Explore</span>
+
+        </a>
+
+        <a href="matches.html">
+
+            <i class="ri-heart-3-line"></i>
+
+            <span>Matches</span>
+
+        </a>
+
+        <a href="chat.html" class="active">
+
+            <i class="ri-chat-3-fill"></i>
+
+            <span>Chat</span>
+
+        </a>
+
+        <a href="profile.html">
+
+            <i class="ri-user-3-line"></i>
+
+            <span>Profile</span>
+
+        </a>
+
+    </nav>
+
+    <script src="js/chat.js"></script>
+
+</body>
+
+</html>
