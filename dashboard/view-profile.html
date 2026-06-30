@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivaha • View Profile</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/view-profile.css">
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header class="top-header">
+
+    <button class="icon-btn" id="menuBtn">
+        <i class="ri-menu-line"></i>
+    </button>
+
+    <div class="logo">
+        <span>Vivaha</span>
+    </div>
+
+    <div class="header-right">
+
+        <button class="icon-btn" onclick="window.location='notifications.html'">
+            <i class="ri-notification-3-line"></i>
+        </button>
+
+        <img src="../assets/images/profile.jpg"
+             class="header-profile"
+             onclick="window.location='profile.html'">
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- PAGE -->
+<!-- ========================= -->
+
+<main class="profile-page">
+
+    <!-- Cover -->
+
+    <section class="cover-section">
+
+        <img src="../assets/images/cover.jpg" class="cover-image">
+
+        <button class="back-btn" onclick="history.back()">
+            <i class="ri-arrow-left-line"></i>
+        </button>
+
+        <button class="share-btn" onclick="window.location='share.html'">
+            <i class="ri-share-line"></i>
+        </button>
+
+    </section>
+
+    <!-- Profile Card -->
+
+    <section class="profile-card">
+
+        <img src="../assets/images/profile.jpg"
+             class="profile-photo">
+
+        <div class="verification-badge">
+            <i class="ri-verified-badge-fill"></i>
+            Verified
+        </div>
+
+        <h2 class="profile-name">
+            Priya Sharma
+        </h2>
+
+        <p class="profile-location">
+            24 Years • Mysuru
+        </p>
+
+        <div class="compatibility-box">
+
+            <div class="percent">
+                94%
+            </div>
+
+            <div>
+
+                <h4>AI Compatibility</h4>
+
+                <p>Excellent Match</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Quick Info -->
+
+    <section class="info-card">
+
+        <h3>Basic Information</h3>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <span>Age</span>
+                <strong>24</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Height</span>
+                <strong>5'5"</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Religion</span>
+                <strong>Hindu</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Caste</span>
+                <strong>Vokkaliga</strong>
+            </div>
+
+            <div class="info-item">
+                <span>District</span>
+                <strong>Mysuru</strong>
+            </div>
+
+            <div class="info-item">
+                <span>Mother Tongue</span>
+                <strong>Kannada</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section class="info-card">
+
+        <h3>Education & Career</h3>
+
+        <div class="details-list">
+
+            <div class="detail-row">
+                <span>Education</span>
+                <strong>M.Tech Computer Science</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Occupation</span>
+                <strong>Software Engineer</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Company</span>
+                <strong>Infosys</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Annual Income</span>
+                <strong>₹12 LPA</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section class="info-card">
+
+        <h3>About Me</h3>
+
+        <p class="about-text">
+
+            Passionate software engineer who enjoys travelling,
+            reading books, music and spending quality time with family.
+            Looking for a caring life partner who values trust,
+            respect and togetherness.
+
+        </p>
+
+    </section>
+
+    <!-- Family -->
+
+    <section class="info-card">
+
+        <h3>Family Details</h3>
+
+        <div class="details-list">
+
+            <div class="detail-row">
+                <span>Father</span>
+                <strong>Business</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Mother</span>
+                <strong>Teacher</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Siblings</span>
+                <strong>1 Brother</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Family Type</span>
+                <strong>Nuclear</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Lifestyle -->
+
+    <section class="info-card">
+
+        <h3>Lifestyle</h3>
+
+        <div class="chips">
+
+            <span>Non-Smoker</span>
+
+            <span>Non-Drinker</span>
+
+            <span>Vegetarian</span>
+
+            <span>Fitness</span>
+
+            <span>Travel</span>
+
+            <span>Music</span>
+
+        </div>
+
+    </section>
+
+    <!-- Partner -->
+
+    <section class="info-card">
+
+        <h3>Partner Preference</h3>
+
+        <p class="about-text">
+
+            Looking for a well educated,
+            respectful and family-oriented partner
+            with similar values and a positive outlook.
+
+        </p>
+
+    </section>
+
+    <!-- Gallery -->
+
+    <section class="info-card">
+
+        <div class="section-title">
+
+            <h3>Photo Gallery</h3>
+
+            <button>View All</button>
+
+        </div>
+
+        <div class="gallery">
+
+            <img src="../assets/images/gallery1.jpg">
+
+            <img src="../assets/images/gallery2.jpg">
+
+            <img src="../assets/images/gallery3.jpg">
+
+            <img src="../assets/images/gallery4.jpg">
+
+        </div>
+
+    </section>
+
+    <!-- AI Report -->
+
+    <section class="ai-card">
+
+        <div class="ai-left">
+
+            <i class="ri-robot-2-line"></i>
+
+        </div>
+
+        <div class="ai-right">
+
+            <h3>AI Relationship Report</h3>
+
+            <p>
+                Discover compatibility, personality,
+                communication style and marriage readiness.
+            </p>
+
+        </div>
+
+        <button onclick="window.location='ai-report.html'">
+
+            View
+
+        </button>
+
+    </section>
+
+    <!-- Actions -->
+
+    <section class="action-buttons">
+
+        <button class="interest-btn">
+
+            <i class="ri-heart-fill"></i>
+
+            Express Interest
+
+        </button>
+
+        <button class="chat-btn"
+                onclick="window.location='chat-room.html'">
+
+            <i class="ri-chat-3-line"></i>
+
+            Chat
+
+        </button>
+
+    </section>
+
+    <section class="secondary-buttons">
+
+        <button>
+
+            <i class="ri-share-line"></i>
+
+            Share Profile
+
+        </button>
+
+        <button>
+
+            <i class="ri-flag-line"></i>
+
+            Report
+
+        </button>
+
+    </section>
+
+</main>
+
+<!-- ========================= -->
+<!-- Bottom Navigation -->
+<!-- ========================= -->
+
+<nav class="bottom-nav">
+
+    <a href="home.html">
+        <i class="ri-home-5-line"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="explore.html">
+        <i class="ri-search-line"></i>
+        <span>Explore</span>
+    </a>
+
+    <a href="matches.html">
+        <i class="ri-heart-3-line"></i>
+        <span>Matches</span>
+    </a>
+
+    <a href="chat.html">
+        <i class="ri-chat-3-line"></i>
+        <span>Chat</span>
+    </a>
+
+    <a href="profile.html" class="active">
+        <i class="ri-user-3-line"></i>
+        <span>Profile</span>
+    </a>
+
+</nav>
+
+<script src="js/view-profile.js"></script>
+
+</body>
+  </html>
