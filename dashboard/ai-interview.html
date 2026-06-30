@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vivaha AI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/ai-interview.css">
+
+</head>
+
+<body>
+
+    <!--====================================-->
+    <!-- HEADER -->
+    <!--====================================-->
+
+    <header class="top-header">
+
+        <button class="icon-btn" onclick="history.back()">
+            <i class="ri-arrow-left-line"></i>
+        </button>
+
+        <div class="logo">
+            Vivaha AI
+        </div>
+
+        <button class="icon-btn" onclick="window.location='premium.html'">
+            <i class="ri-vip-crown-2-line"></i>
+        </button>
+
+    </header>
+
+    <!--====================================-->
+    <!-- MAIN -->
+    <!--====================================-->
+
+    <main class="ai-page">
+
+        <!-- AI Welcome -->
+
+        <section class="hero-card">
+
+            <div class="ai-avatar">
+
+                <i class="ri-robot-2-fill"></i>
+
+            </div>
+
+            <h2>Meet Vivaha AI</h2>
+
+            <p>
+
+                Your personal AI marriage assistant.
+                Ask anything about profiles, compatibility,
+                conversations, relationships, family values,
+                or premium matchmaking guidance.
+
+            </p>
+
+            <div class="premium-chip">
+
+                <i class="ri-vip-crown-fill"></i>
+
+                Gold & Diamond unlock advanced AI
+
+            </div>
+
+        </section>
+
+        <!-- AI Suggestions -->
+
+        <section class="suggestions-card">
+
+            <h3>Try asking...</h3>
+
+            <div class="suggestion-grid">
+
+                <button class="suggestion-chip">
+                    Find my perfect match
+                </button>
+
+                <button class="suggestion-chip">
+                    Compare two profiles
+                </button>
+
+                <button class="suggestion-chip">
+                    Analyze compatibility
+                </button>
+
+                <button class="suggestion-chip">
+                    Improve my profile
+                </button>
+
+                <button class="suggestion-chip">
+                    Write my bio
+                </button>
+
+                <button class="suggestion-chip">
+                    Help me start chatting
+                </button>
+
+                <button class="suggestion-chip">
+                    Marriage advice
+                </button>
+
+                <button class="suggestion-chip">
+                    Family compatibility
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Chat Area -->
+
+        <section class="chat-section" id="chatContainer">
+
+            <!-- AI -->
+
+            <div class="message ai-message">
+
+                <div class="avatar">
+
+                    <i class="ri-robot-2-fill"></i>
+
+                </div>
+
+                <div class="bubble">
+
+                    <h4>Vivaha AI</h4>
+
+                    <p>
+
+                        Hello 👋
+
+                        I'm your personal marriage assistant.
+
+                        I can help you compare profiles,
+                        understand compatibility, improve your
+                        profile, write introductions, suggest
+                        conversation starters and answer your
+                        relationship questions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Example User -->
+
+            <div class="message user-message">
+
+                <div class="bubble">
+
+                    Compare Priya and Sneha
+
+                </div>
+
+            </div>
+
+            <!-- AI Rich Response -->
+
+            <div class="message ai-message">
+
+                <div class="avatar">
+
+                    <i class="ri-robot-2-fill"></i>
+
+                </div>
+
+                <div class="bubble">
+
+                    <h4>Comparison Summary</h4>
+
+                    <p>
+
+                        Priya appears to be a stronger match
+                        based on family values, education and
+                        communication preferences.
+
+                    </p>
+
+                    <div class="result-card">
+
+                        <div class="result-row">
+
+                            <span>Priya Sharma</span>
+
+                            <strong>96%</strong>
+
+                        </div>
+
+                        <div class="result-row">
+
+                            <span>Sneha Patil</span>
+
+                            <strong>89%</strong>
+
+                        </div>
+
+                    </div>
+
+                    <button class="response-btn"
+                        onclick="window.location='view-profile.html'">
+
+                        View Recommended Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--====================================-->
+    <!-- AI INPUT -->
+    <!--====================================-->
+
+    <footer class="chat-footer">
+
+        <button class="footer-btn">
+
+            <i class="ri-image-line"></i>
+
+        </button>
+
+        <button class="footer-btn">
+
+            <i class="ri-mic-line"></i>
+
+        </button>
+
+        <div class="input-box">
+
+            <input
+                type="text"
+                id="userPrompt"
+                placeholder="Ask Vivaha AI anything...">
+
+        </div>
+
+        <button class="send-btn" id="sendBtn">
+
+            <i class="ri-send-plane-fill"></i>
+
+        </button>
+
+    </footer>
+
+    <!--====================================-->
+    <!-- PREMIUM POPUP -->
+    <!--====================================-->
+
+    <div class="premium-popup" id="premiumPopup">
+
+        <div class="popup-card">
+
+            <i class="ri-vip-crown-fill"></i>
+
+            <h3>Unlock Vivaha AI Pro</h3>
+
+            <p>
+
+                Gold and Diamond members enjoy unlimited AI
+                conversations, advanced compatibility reports,
+                profile comparison, AI relationship coach and
+                personalized recommendations.
+
+            </p>
+
+            <button onclick="window.location='premium.html'">
+
+                Upgrade Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/ai-interview.js"></script>
+
+</body>
+
+</html>
