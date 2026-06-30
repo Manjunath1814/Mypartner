@@ -1,0 +1,771 @@
+/*=========================================
+  VIVAHA - VIEW PROFILE
+  CSS PART 1
+=========================================*/
+
+/*-------------------------
+Google Font
+-------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*-------------------------
+Root Variables
+-------------------------*/
+
+:root{
+
+    --bg:#FAF7F2;
+    --card:#FFFFFF;
+    --primary:#6A4C93;
+    --gold:#D4AF37;
+
+    --text:#222222;
+    --text-light:#666666;
+
+    --border:#ECE5D8;
+
+    --shadow:0 8px 24px rgba(0,0,0,.06);
+
+    --radius-card:18px;
+    --radius-btn:14px;
+    --radius-input:12px;
+
+}
+
+/*-------------------------
+Reset
+-------------------------*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    padding-bottom:100px;
+
+}
+
+/*=========================
+HEADER
+=========================*/
+
+.top-header{
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    height:72px;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+}
+
+.logo{
+
+    font-size:22px;
+    font-weight:700;
+    color:var(--primary);
+    letter-spacing:.4px;
+
+}
+
+.header-right{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    outline:none;
+
+    background:#F5F2EC;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+.icon-btn:hover{
+
+    background:#EEE7DD;
+
+}
+
+.icon-btn i{
+
+    font-size:22px;
+    color:var(--text);
+
+}
+
+.header-profile{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    cursor:pointer;
+
+    border:2px solid var(--gold);
+
+}
+
+/*=========================
+PAGE
+=========================*/
+
+.profile-page{
+
+    width:100%;
+    max-width:520px;
+    margin:auto;
+
+}
+
+/*=========================
+COVER
+=========================*/
+
+.cover-section{
+
+    position:relative;
+    width:100%;
+    height:240px;
+
+}
+
+.cover-image{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.back-btn,
+.share-btn{
+
+    position:absolute;
+
+    top:18px;
+
+    width:44px;
+    height:44px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+}
+
+.back-btn{
+
+    left:18px;
+
+}
+
+.share-btn{
+
+    right:18px;
+
+}
+
+.back-btn i,
+.share-btn i{
+
+    font-size:22px;
+    color:var(--text);
+
+}
+
+/*=========================
+PROFILE CARD
+=========================*/
+
+.profile-card{
+
+    position:relative;
+
+    background:var(--card);
+
+    margin:-65px 18px 20px;
+
+    padding:80px 22px 26px;
+
+    border-radius:var(--radius-card);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.profile-photo{
+
+    position:absolute;
+
+    top:-58px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:116px;
+    height:116px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #fff;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.verification-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:#F8F3E4;
+
+    color:#8A6A00;
+
+    border:1px solid #E8D79D;
+
+    padding:7px 14px;
+
+    border-radius:40px;
+
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.verification-badge i{
+
+    color:var(--gold);
+
+}
+
+.profile-name{
+
+    margin-top:18px;
+
+    font-size:28px;
+    font-weight:700;
+
+}
+
+.profile-location{
+
+    margin-top:8px;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+/*=========================
+AI COMPATIBILITY
+=========================*/
+
+.compatibility-box{
+
+    margin-top:24px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:#FCFBF8;
+
+}
+
+.percent{
+
+    width:72px;
+    height:72px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.compatibility-box h4{
+
+    font-size:18px;
+    margin-bottom:4px;
+
+}
+
+.compatibility-box p{
+
+    color:var(--text-light);
+    font-size:14px;
+
+}
+
+/*=========================
+COMMON CARD
+=========================*/
+
+.info-card{
+
+    background:#fff;
+
+    margin:18px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.info-card h3{
+
+    font-size:19px;
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+/*=========================================
+  VIVAHA - VIEW PROFILE
+  CSS PART 2
+=========================================*/
+
+/*=========================
+INFO GRID
+=========================*/
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.info-item{
+    background:#FCFBF8;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:16px;
+}
+
+.info-item span{
+    display:block;
+    font-size:13px;
+    color:var(--text-light);
+    margin-bottom:6px;
+}
+
+.info-item strong{
+    font-size:15px;
+    font-weight:600;
+    color:var(--text);
+}
+
+/*=========================
+DETAIL LIST
+=========================*/
+
+.details-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.detail-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--border);
+}
+
+.detail-row:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.detail-row span{
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.detail-row strong{
+    color:var(--text);
+    font-size:15px;
+    font-weight:600;
+    text-align:right;
+}
+
+/*=========================
+ABOUT
+=========================*/
+
+.about-text{
+    color:var(--text-light);
+    line-height:1.8;
+    font-size:15px;
+}
+
+/*=========================
+LIFESTYLE CHIPS
+=========================*/
+
+.chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.chips span{
+    background:#F7F4EF;
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:500;
+}
+
+/*=========================
+SECTION TITLE
+=========================*/
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.section-title button{
+    border:none;
+    background:none;
+    color:var(--primary);
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/*=========================
+PHOTO GALLERY
+=========================*/
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.gallery img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:16px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/*=========================
+AI REPORT CARD
+=========================*/
+
+.ai-card{
+    margin:18px;
+    background:#FFFFFF;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:var(--shadow);
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.ai-left{
+    width:60px;
+    height:60px;
+    background:var(--primary);
+    color:#fff;
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.ai-left i{
+    font-size:28px;
+}
+
+.ai-right{
+    flex:1;
+}
+
+.ai-right h3{
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.ai-right p{
+    color:var(--text-light);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.ai-card button{
+    border:none;
+    background:var(--gold);
+    color:#fff;
+    padding:12px 18px;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/*=========================
+PRIMARY ACTIONS
+=========================*/
+
+.action-buttons{
+    display:flex;
+    gap:14px;
+    margin:20px 18px;
+}
+
+.action-buttons button{
+    flex:1;
+    height:54px;
+    border:none;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+
+    transition:.3s;
+}
+
+.interest-btn{
+    background:var(--primary);
+    color:#fff;
+}
+
+.interest-btn:hover{
+    background:#5a3f81;
+}
+
+.chat-btn{
+    background:var(--gold);
+    color:#fff;
+}
+
+.chat-btn:hover{
+    opacity:.92;
+}
+
+/*=========================
+SECONDARY BUTTONS
+=========================*/
+
+.secondary-buttons{
+    display:flex;
+    gap:12px;
+    margin:0 18px 28px;
+}
+
+.secondary-buttons button{
+    flex:1;
+    height:50px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.secondary-buttons button:hover{
+    background:#F7F5F2;
+}
+
+/*=========================
+BOTTOM NAVIGATION
+=========================*/
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:74px;
+
+    background:#fff;
+    border-top:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    z-index:999;
+}
+
+.bottom-nav a{
+    flex:1;
+    text-decoration:none;
+    color:var(--text-light);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+    transition:.3s;
+}
+
+.bottom-nav i{
+    font-size:22px;
+}
+
+.bottom-nav span{
+    font-size:11px;
+    font-weight:500;
+}
+
+.bottom-nav a.active{
+    color:var(--primary);
+}
+
+.bottom-nav a:hover{
+    color:var(--primary);
+}
+
+/*=========================
+SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#D7D0C4;
+    border-radius:20px;
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media (min-width:768px){
+
+    .profile-page{
+        max-width:560px;
+    }
+
+    .cover-section{
+        height:280px;
+    }
+
+    .gallery img{
+        height:180px;
+    }
+
+}
